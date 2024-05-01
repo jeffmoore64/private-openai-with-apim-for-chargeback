@@ -1,0 +1,23 @@
+[
+  {
+    "name": "ChargebackEventHubTrigger",
+    "scriptFile": "chargeback_eventhub_trigger.dll",
+    "entryPoint": "chargeback_eventhub_trigger.ChargebackEventHubTrigger.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "openAiApiEvents",
+        "direction": "In",
+        "type": "eventHubTrigger",
+        "eventHubName": "%EventHubName%",
+        "connection": "EventHubConnection",
+        "cardinality": "Many",
+        "dataType": "String",
+        "properties": {}
+      }
+    ]
+  }
+]
